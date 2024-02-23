@@ -4,7 +4,7 @@ require("dotenv").config();
 let token = process.env.DISCORD_TOKEN;
 let prefix = "-";
 const bot = new Client({
-  intents: [GatewayIntentBits.Guilds],
+  intents: ["Guilds", "GuildMessages", "MessageContent"],
 });
 bot.commands = new Collection();
 
@@ -29,7 +29,7 @@ for (const file of eventFiles) {
 }
 
 bot.on("messageCreate", async message => {
-  console.log("message", message);
+  // console.log("message", message);
   //Check if author is a bot or the message was sent in dms and return
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;

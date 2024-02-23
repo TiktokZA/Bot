@@ -8,6 +8,6 @@ module.exports = {
     );
 
     //Set the Presence of the bot user
-    bot.user.setPresence({ activities: [{ name: "My code" }] });
+    // bot.user.setPresence({ activities: [{ name: "My code" }] });
   },
 };
