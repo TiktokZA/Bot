@@ -1,0 +1,92 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const Woocommerce_Sale = mongoose.model(
+  "Woocommerce_Sale",
+  new Schema(
+    {
+      full_label: "String",
+      brand: "String",
+      type: "String",
+      channel: "String",
+      total_sales: "String",
+      net_sales: "String",
+      average_sales: "String",
+      total_orders: "Number",
+      total_items: "Number",
+      total_tax: "String",
+      total_shipping: "String",
+      total_refunds: "Number",
+      total_discount: "String",
+      totals_grouped_by: "String",
+      totals: "Object",
+      total_customers: "Number",
+      _links: "Object",
+    },
+    { timestamps: true }
+  ),
+  "Woocommerce_Sale"
+);
+
+const Woocommerce_Order = mongoose.model(
+  "Woocommerce_Order",
+  new Schema(
+    {
+      full_label: "String",
+      brand: "String",
+      type: "String",
+      channel: "String",
+      id: "String",
+      parent_id: "String",
+      status: "String",
+      currency: "String",
+      version: "String",
+      prices_include_tax: "Boolean",
+      date_created: "Date",
+      date_modified: "Date",
+      discount_total: "String",
+      discount_tax: "String",
+      shipping_total: "String",
+      shipping_tax: "String",
+      cart_tax: "String",
+      total: "String",
+      total_tax: "String",
+      customer_id: "Number",
+      order_key: "String",
+      billing: "Object",
+      shipping: "Object",
+      payment_method: "String",
+      payment_method_title: "String",
+      transaction_id: "String",
+      customer_ip_address: "String",
+      customer_user_agent: "String",
+      created_via: "String",
+      customer_note: "String",
+      date_completed: "Date",
+      date_paid: "Date",
+      cart_hash: "String",
+      number: "String",
+      meta_data: "Array",
+      line_items: "Array",
+      tax_lines: "Array",
+      shipping_lines: "Array",
+      fee_lines: "Array",
+      coupon_lines: "Array",
+      refunds: "Array",
+      payment_url: "String",
+      is_editable: "Boolean",
+      needs_payment: "Boolean",
+      needs_processing: "Boolean",
+      date_created_gmt: "Date",
+      date_modified_gmt: "Date",
+      date_completed_gmt: "Date",
+      date_paid_gmt: "Date",
+      store_credit_used: "Number",
+      currency_symbol: "String",
+      _links: "Object",
+    },
+    { timestamps: true }
+  ),
+  "Woocommerce_Order"
+);
+module.exports = { Woocommerce_Order, Woocommerce_Sale };
