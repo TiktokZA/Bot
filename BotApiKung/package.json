@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.7",
+    "bard-ai": "^2.0.3",
+    "chalk": "^5.3.0",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
     "fs": "^0.0.1-security",
@@ -21,5 +23,6 @@
     "nodemon": "^3.0.3",
     "openai": "^4.28.0",
     "puppeteer": "^22.1.0"
-  }
+  },
+  "type": "commonjs"
 }

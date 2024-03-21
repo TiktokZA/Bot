@@ -10,14 +10,14 @@ bot.commands = new Collection();
 
 const commandFiles = fs
   .readdirSync("./commands/")
-  .filter(f => f.endsWith(".js"));
+  .filter((f) => f.endsWith(".js"));
 for (const file of commandFiles) {
   const props = require(`./commands/${file}`);
   console.log(`${file} loaded`);
   bot.commands.set(props.config.name, props);
 }
 
-const eventFiles = fs.readdirSync("./events/").filter(f => f.endsWith(".js"));
+const eventFiles = fs.readdirSync("./events/").filter((f) => f.endsWith(".js"));
 
 for (const file of eventFiles) {
   const event = require(`./events/${file}`);
@@ -28,7 +28,7 @@ for (const file of eventFiles) {
   }
 }
 
-bot.on("messageCreate", async message => {
+bot.on("messageCreate", async (message) => {
   // console.log("message", message);
   //Check if author is a bot or the message was sent in dms and return
   if (message.author.bot) return;
