@@ -1,0 +1,20 @@
+version: "3.9"
+
+networks:
+  networks_bot:
+    name: botnetworks
+    driver: bridge
+
+services:
+  botfindip:
+    build:
+      context: ./Botfindmyip
+      dockerfile: Dockerfile
+    container_name: backend-container
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./Botfindmyip:/appsfindip
+      - /appsfindip/node_modules/
+    networks:
+      - networks_bot
